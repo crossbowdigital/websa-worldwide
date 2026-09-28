@@ -570,7 +570,7 @@ def home():
   <button class="pause" type="button" aria-pressed="false" aria-label="Pause background slideshow">%(pause)s%(play)s</button>
   <div class="inner">
     <span class="kicker"><i></i>Factory-direct from Guangzhou to your door</span>
-    <h1>Sourced in Guangzhou. Delivered across Africa<span class="dot">.</span></h1>
+    <h1>Guangzhou to Africa. Door to door<span class="dot">.</span></h1>
     <p class="lede">Websa Worldwide sources, ships and delivers the equipment, products and projects that build businesses across Southern Africa. One partner from factory floor to hand-over.</p>
     <div class="btn-row">
       <a class="btn btn-gold" href="quote.html">Get a quotation</a>
@@ -695,7 +695,7 @@ def home():
               ("Making a difference", "index.html#difference", "Street lights that taught a town to install them")]
     return page("index.html", "Websa Worldwide | Sourcing, trade and projects from Guangzhou for Africa",
                 "Websa Worldwide sources, ships and delivers equipment, products and projects across Africa from its Guangzhou head office. Trade, energy, construction and agriculture since 1999.",
-                body, body_class="has-bottom-bar", search=search, og_title="Sourced in Guangzhou. Delivered across Africa.")
+                body, body_class="has-bottom-bar", search=search, og_title="Guangzhou to Africa. Door to door.")
 
 def about():
     tl = [("1999", "A programme for farmers", "Lazarus Magura starts WEBSA, Wealth Building Strategy for All, in Zimbabwe: investment sourcing, equipment procurement, training and coaching to make farmers and their value chain self-sufficient and profitable."),
