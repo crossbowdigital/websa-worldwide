@@ -18,6 +18,7 @@ problems = []
 r = subprocess.run([sys.executable, os.path.join(ROOT, "build.py"), "--check"], capture_output=True, text=True, encoding="utf-8", errors="replace")
 sys.stdout.write(r.stdout)
 if r.returncode != 0:
+    sys.stdout.write(r.stderr[-3000:])
     problems.append("build.py --check failed")
 
 # 2. crawl

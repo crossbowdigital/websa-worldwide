@@ -1359,8 +1359,16 @@ def og_images():
     from PIL import Image, ImageDraw, ImageFont
     os.makedirs(os.path.join(OUT, "assets", "og"), exist_ok=True)
     logo = Image.open(os.path.join(OUT, "assets/img/websa-logo-reversed.png")).convert("RGBA"); logo.thumbnail((260, 200))
-    f_big = ImageFont.truetype(os.path.join(ROOT, "tools/fonts/montserrat-800.ttf"), 64)
-    f_small = ImageFont.truetype(os.path.join(ROOT, "tools/fonts/montserrat-600.ttf"), 28)
+    fdir = os.path.join(ROOT, "tools", "fonts"); os.makedirs(fdir, exist_ok=True)
+    for w in (600, 800):
+        ttf = os.path.join(fdir, "montserrat-%d.ttf" % w)
+        if not os.path.exists(ttf):
+            from fontTools.ttLib import TTFont
+            from fontTools.varLib import instancer
+            vf = TTFont(os.path.join(OUT, "assets", "fonts", "montserrat-var-latin.woff2")); vf.flavor = None
+            instancer.instantiateVariableFont(vf, {"wght": w}).save(ttf)
+    f_big = ImageFont.truetype(os.path.join(fdir, "montserrat-800.ttf"), 64)
+    f_small = ImageFont.truetype(os.path.join(fdir, "montserrat-600.ttf"), 28)
     for p in PAGES:
         path = os.path.join(OUT, "assets/og/%s.jpg" % p["fname"][:-5])
         im = Image.new("RGB", (1200, 630), (20, 20, 20)); d = ImageDraw.Draw(im)
