@@ -4,6 +4,10 @@ Static, framework-free rebuild of websaworldwide.com laid out on the Procter & G
 
 Eighteen pages in three languages (English, Simplified Chinese, Portuguese), a four-step quotation wizard, three case studies, a team page, site search, video, per-page SEO, WebP images, an accessibility pass and an audit that runs on every commit.
 
+## Live preview
+
+https://crossbowdigital.github.io/websa-worldwide/ (GitHub Pages, repo crossbowdigital/websa-worldwide, deployed by `.github/workflows/pages.yml` on every push to main). Canonical, hreflang and sitemap URLs still point at websaworldwide.com, so search engines are steered away from the preview; that is deliberate until the real domain is pointed here.
+
 ## Run it
 
 ```bash
