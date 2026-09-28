@@ -83,7 +83,7 @@ I = {
 SECTORS = [
   dict(slug="sourcing", tag="Trade", name="Import, export and logistics", img="assets/img/warehouse.jpg",
        alt="Forklift moving pallets inside a distribution warehouse",
-       short="Factory-direct sourcing from China, with the paperwork, freight and customs handled end to end."),
+       short="Factory-direct sourcing from Guangzhou, with the paperwork, freight and customs handled end to end."),
   dict(slug="energy", tag="Energy", name="Energy and petroleum", img="assets/img/solar-farm.jpg",
        alt="Rows of solar panels on a utility-scale solar farm",
        short="Solar street lighting, utility-scale programme delivery and fuel supply for growing towns and businesses."),
@@ -138,9 +138,9 @@ VIDEOS = [
 ]
 
 TEAM = [
-  dict(name="Lazarus Magura", role="Founding director", office="Guangzhou and Zimbabwe", photo=None,
+  dict(name="Lazarus Magura", role="Founding director", office="Guangzhou head office", photo=None,
        bio="Started the WEBSA programme in Zimbabwe in 1999 to make farmers and their value chain self-sufficient, and has led its agricultural, equipment and energy projects since. A director and shareholder of both Websa companies."),
-  dict(name="Collins Ndewere", role="Director", office="South Africa", photo=None,
+  dict(name="Collins Ndewere", role="Director", office="Africa delivery office", photo=None,
        bio="Brought the programme to South Africa through Ndewere Corporation in 2008 and NDECOR Trading in 2014, and directed the Northern Cape solar street lighting and the Lesedi and Letsatsi programme work. A director and shareholder of both Websa companies."),
 ]
 
@@ -277,7 +277,7 @@ def case_card(c, i=0):
 NAV_LEFT = [
   ("What we do", [
     ("services.html", "All services", "Four sectors, one way of working"),
-    ("sourcing.html", "Import, export and logistics", "Sourcing from China, delivered to Africa"),
+    ("sourcing.html", "Import, export and logistics", "Sourced in Guangzhou, delivered in Africa"),
     ("energy.html", "Energy and petroleum", "Solar, electricity and fuel supply"),
     ("construction.html", "Construction, mining and print", "Build, extract, brand"),
     ("agriculture.html", "Agriculture", "Farming, seed and rural livelihoods"),
@@ -350,7 +350,7 @@ def header(fname):
     <a class="btn btn-ghost" href="%(wa)s" rel="noopener" data-wa>WhatsApp %(phone)s</a>
     <button class="btn btn-ghost" type="button" data-open-search>%(search)s Search</button>
   </div>
-  <p class="drawer-meta">Guangzhou, China and South Africa. <a href="mailto:%(email)s">%(email)s</a></p>
+  <p class="drawer-meta">Guangzhou head office. <a href="mailto:%(email)s">%(email)s</a></p>
 </nav>
 <div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Search" hidden>
   <div class="search-box">
@@ -376,7 +376,7 @@ def footer():
     <div class="foot-grid">
       <div class="foot-brand">
         <img src="assets/img/websa-logo-reversed.png" width="374" height="298" alt="Websa Worldwide" loading="lazy">
-        <p>Wealth Building Strategy for All. Registered in Guangzhou, China and in South Africa. Working across Southern Africa since 1999.</p>
+        <p>Wealth Building Strategy for All. A Guangzhou company delivering projects across Africa since 1999.</p>
       </div>
       <div>
         <h3 class="foot-h">What we do</h3>
@@ -569,8 +569,8 @@ def home():
   <div class="slides">%(slides)s</div>
   <button class="pause" type="button" aria-pressed="false" aria-label="Pause background slideshow">%(pause)s%(play)s</button>
   <div class="inner">
-    <span class="kicker"><i></i>Guangzhou &middot; South Africa &middot; Zimbabwe</span>
-    <h1>Built in Africa. Connected to China<span class="dot">.</span></h1>
+    <span class="kicker"><i></i>Factory-direct from Guangzhou to your door</span>
+    <h1>Sourced in Guangzhou. Delivered across Africa<span class="dot">.</span></h1>
     <p class="lede">Websa Worldwide sources, ships and delivers the equipment, products and projects that build businesses across Southern Africa. One partner from factory floor to hand-over.</p>
     <div class="btn-row">
       <a class="btn btn-gold" href="quote.html">Get a quotation</a>
@@ -585,7 +585,7 @@ def home():
     <div class="section-head reveal">
       <span class="eyebrow">Our mission</span>
       <h2>A wealth building strategy for all<span class="dot">.</span></h2>
-      <p class="lede">WEBSA began in 1999 as a programme to help Zimbabwean farmers become self-sufficient. Today it is a company registered in Guangzhou and South Africa, applying the same idea to trade, energy, construction and agriculture: find the right partner, procure the right equipment, and train the people who will run it.</p>
+      <p class="lede">WEBSA began in 1999 as a programme to help Zimbabwean farmers become self-sufficient. Today it is a Guangzhou company applying the same idea to trade, energy, construction and agriculture: find the right partner, procure the right equipment, and train the people who will run it.</p>
     </div>
     <div class="steps">
       <div class="step reveal"><div class="num">1</div><h3>Formulate</h3><p>We turn an idea into a plan with numbers behind it: specification, suppliers, landed cost, timeline and the funding route.</p></div>
@@ -644,7 +644,7 @@ def home():
     <div class="section-head reveal">
       <span class="eyebrow">Track record</span>
       <h2>Delivered, not promised<span class="dot">.</span></h2>
-      <p class="lede">A selection of projects formulated, procured and executed under the WEBSA programme in South Africa and Zimbabwe.</p>
+      <p class="lede">A selection of projects formulated, procured and executed under the WEBSA programme across Southern Africa.</p>
     </div>
     <ul class="projects list-reset">%(proj)s</ul>
     <div class="btn-row center mt-3 reveal"><a class="btn btn-outline" href="projects.html">See all nine projects</a></div>
@@ -656,7 +656,7 @@ def home():
     <div class="bigcards">
       <a class="bigcard reveal" href="quote.html">
         %(big1)s
-        <div class="cap"><h3>Source from China</h3><p>Vehicles, machinery, electronics, textiles and consumer goods, factory-direct and delivered to your door.</p><span class="more">Get a quotation %(ar)s</span></div>
+        <div class="cap"><h3>Source from Guangzhou</h3><p>Vehicles, machinery, electronics, textiles and consumer goods, factory-direct and delivered to your door.</p><span class="more">Get a quotation %(ar)s</span></div>
       </a>
       <a class="bigcard reveal d1" href="contact.html#investors">
         %(big2)s
@@ -693,9 +693,9 @@ def home():
     search = [("Our mission", "index.html#mission", "A wealth building strategy for all. Formulate, implement, hand over."),
               ("What we do", "index.html#sectors", "Four sectors, one way of working"),
               ("Making a difference", "index.html#difference", "Street lights that taught a town to install them")]
-    return page("index.html", "Websa Worldwide | Sourcing, trade and projects between China and Africa",
-                "Websa Worldwide sources, ships and delivers equipment, products and projects across Southern Africa from Guangzhou, China. Trade, energy, construction and agriculture since 1999.",
-                body, body_class="has-bottom-bar", search=search, og_title="Built in Africa. Connected to China.")
+    return page("index.html", "Websa Worldwide | Sourcing, trade and projects from Guangzhou for Africa",
+                "Websa Worldwide sources, ships and delivers equipment, products and projects across Africa from its Guangzhou head office. Trade, energy, construction and agriculture since 1999.",
+                body, body_class="has-bottom-bar", search=search, og_title="Sourced in Guangzhou. Delivered across Africa.")
 
 def about():
     tl = [("1999", "A programme for farmers", "Lazarus Magura starts WEBSA, Wealth Building Strategy for All, in Zimbabwe: investment sourcing, equipment procurement, training and coaching to make farmers and their value chain self-sufficient and profitable."),
@@ -704,7 +704,7 @@ def about():
           ("2014 to 2016", "Two 75 MW solar plants", "NDECOR runs procurement, supply and training for the socio-economic and enterprise development programmes of the Lesedi and Letsatsi solar plants for two years."),
           ("2018", "Ekhaya opens in Bulawayo", "The WEBSA strategy funds the first Ekhaya fast food restaurant in Bulawayo, Zimbabwe. By 2024 the chain is trading from twelve shops."),
           ("2024", "A company of its own", "After twenty-five years as a programme, WEBSA is registered as Guangzhou Websa Worldwide Co., Ltd in the People's Republic of China and as Websa Worldwide (Pty) Ltd in South Africa, with Lazarus Magura and Collins Ndewere as directors and shareholders.")]
-    tl_html = "".join('<div class="tl reveal"><div class="year">%s</div><h3>%s</h3><p>%s</p></div>' % t for t in tl)
+    tl_html = "".join('<div class="tl reveal from-left"><div class="year">%s</div><h3>%s</h3><p>%s</p></div>' % t for t in tl)
     values = [(I["shield"], "Integrity", "We hold the highest ethical standards in every operation and every conversation, in Guangzhou and on site."),
               (I["spark"], "Innovation", "We embrace new technology and creative solutions, then make them work in the real conditions our clients face."),
               (I["leaf"], "Sustainability", "We choose practices that protect the environment and leave communities better equipped than we found them."),
@@ -712,7 +712,7 @@ def about():
               (I["handshake"], "Collaboration", "We build strong partnerships with clients, suppliers and public bodies to reach shared goals.")]
     values_html = "".join('<div class="value reveal"><div class="ico">%s</div><h3>%s</h3><p>%s</p></div>' % v for v in values)
     body = page_hero(I["book"], "Who we are", "Making wealth building work for everyone",
-        "Websa Worldwide is a South African and Chinese company with Zimbabwean roots, built on a simple idea that has held for twenty-five years: give people the equipment, the partners and the skills, and they will build wealth for themselves.",
+        "Websa Worldwide is a Guangzhou company built on a simple idea that has held for twenty-five years across Africa: give people the equipment, the partners and the skills, and they will build wealth for themselves.",
         "assets/img/helmet-worker.jpg", "Engineer in a hard hat and high-visibility vest") + '''
 <section class="section">
   <div class="content">
@@ -777,7 +777,7 @@ def about():
 </section>
 ''' % dict(pic1=pic("assets/img/harvest.jpg", "Farm workers harvesting vegetables", sizes="(max-width: 900px) 100vw, 45vw"), tl=tl_html, globe=I["globe"], pin=I["pin"], grid=I["grid"], tag=I["tag"], values=values_html, users=I["users"], spark=I["spark"], handshake=I["handshake"], leaf=I["leaf"]) + cta_strip("Ready to build something that lasts?", "Tell us what you need to source, build or grow. We reply within one working day.", secondary=("projects.html", "See our projects"))
     search = [("Our history", "about.html#timeline", "Twenty-five years, one strategy: 1999 to 2024"), ("Our values", "about.html#values", "Integrity, innovation, sustainability, excellence, collaboration"), ("Leadership", "about.html#leadership", "Lazarus Magura and Collins Ndewere")]
-    return page("about.html", "Who we are | Websa Worldwide", "Websa Worldwide's story: from a 1999 farming programme in Zimbabwe to a company registered in Guangzhou and South Africa. History, values and leadership.",
+    return page("about.html", "Who we are | Websa Worldwide", "Websa Worldwide's story: from a 1999 farming programme in Zimbabwe to a company headquartered in Guangzhou. History, values and leadership.",
                 body, ld={"@type": "AboutPage", "name": "Who we are", "url": SITE_URL + "/about.html"}, crumbs=[("Home", "index.html"), ("Who we are", "about.html")], search=search)
 
 def team():
@@ -802,14 +802,14 @@ def team():
     <div class="grid grid-2">
       <div class="office-card reveal">
         <div class="ico">%(globe)s</div>
-        <h3>Guangzhou, China</h3>
+        <h3>Guangzhou head office</h3>
         <p class="office-line">Guangzhou Websa Worldwide Co., Ltd, Huangpu District</p>
         %(gz)s
       </div>
       <div class="office-card reveal d1">
         <div class="ico">%(pin)s</div>
-        <h3>South Africa</h3>
-        <p class="office-line">Websa Worldwide (Pty) Ltd</p>
+        <h3>Africa delivery office</h3>
+        <p class="office-line">Websa Worldwide (Pty) Ltd, South Africa</p>
         %(za)s
       </div>
     </div>
@@ -818,7 +818,7 @@ def team():
 ''' % dict(people=people, globe=I["globe"], pin=I["pin"],
            gz=checks(["Supplier search and factory visits across Guangdong and beyond", "Quality inspection before payment and before shipping", "Consolidation of mixed orders into one shipment", "Export documentation and freight booking by air, sea or road"]),
            za=checks(["Project formulation, funding routes and client relationships", "Customs clearance and delivery to site, warehouse or showroom", "Installation, commissioning and operator training", "After-sales support and spare parts"])) + cta_strip("Want to speak to a person, not a form?", "Call or message the head office and ask for a director.", primary=("contact.html", "Contact us"), secondary=("quote.html", "Get a quotation"))
-    return page("team.html", "Leadership and team | Websa Worldwide", "Meet Websa Worldwide's directors, Lazarus Magura and Collins Ndewere, and the Guangzhou and South Africa offices that deliver sourcing, shipping, installation and training.",
+    return page("team.html", "Leadership and team | Websa Worldwide", "Meet Websa Worldwide's directors, Lazarus Magura and Collins Ndewere, and the Guangzhou head office and Africa delivery office that handle sourcing, shipping, installation and training.",
                 body, crumbs=[("Home", "index.html"), ("Who we are", "about.html"), ("Leadership and team", "team.html")],
                 ld=[{"@type": "Person", "name": t["name"], "jobTitle": t["role"], "worksFor": {"@id": SITE_URL + "/#org"}} for t in TEAM],
                 search=[(t["name"], "team.html", t["role"] + ". " + t["bio"]) for t in TEAM])
@@ -941,7 +941,7 @@ def sourcing():
     <div class="btn-row center mt-3 reveal"><a class="btn btn-gold" href="quote.html">Start a quotation request</a></div>
   </div>
 </section>''' % dict(ship=I["ship"], spark=I["spark"], tag=I["tag"], crane=I["crane"]) + video_reel()
-    return sector_page("sourcing", "Import, export and logistics", "Factory-direct from China. Delivered in Africa.",
+    return sector_page("sourcing", "Import, export and logistics", "Factory-direct from Guangzhou. Delivered in Africa.",
         "Websa connects businesses across borders and optimises their supply chains. From our Guangzhou office we source vehicles, machinery, electronics, textiles and consumer goods, then manage the documentation, freight and customs so the goods arrive on time and on budget.",
         "assets/img/warehouse-trucks.jpg", "Trucks loading at a logistics warehouse", I["ship"],
         "Seamless international trade", "Years of experience connecting African buyers with Chinese manufacturers, and the logistics discipline to make each shipment efficient and cost-effective.",
@@ -951,7 +951,7 @@ def sourcing():
          ("Customs clearance", "An experienced team that navigates customs procedures for timely, efficient clearance of every shipment."),
          ("Supply chain solutions", "Strategic insight and tailored solutions that reduce cost and improve operational efficiency across your chain.")],
         "Services offered", "One accountable partner, both ends of the route",
-        ["A registered company in Guangzhou and in South Africa, with staff at both ends of the route.",
+        ["A Guangzhou company with its own delivery team in Africa, so someone is accountable at both ends of the route.",
          "Factory inspections before payment, not photographs after shipping.",
          "Landed-cost quotations that include freight, insurance, duties and clearance.",
          "Vehicles, farming equipment and mining equipment already delivered for clients in the region."],
@@ -1062,14 +1062,14 @@ def projects():
     total_r = sum(p["val"] for p in PROJECTS if p["cur"] == "R"); total_d = sum(p["val"] for p in PROJECTS if p["cur"] == "$")
     fmt = lambda v: "{:.1f}".format(v / 1e6).rstrip("0").rstrip(".")
     body = page_hero(I["star"], "Projects", "Delivered, not promised",
-        "Nine projects formulated, procured and executed under the WEBSA programme in South Africa and Zimbabwe, across trade, energy, health, retail, print and agriculture.",
+        "Nine projects formulated, procured and executed under the WEBSA programme across Southern Africa, in trade, energy, health, retail, print and agriculture.",
         "assets/img/construction.jpg", "Construction site with heavy machinery") + '''
 <section class="section">
   <div class="shell">
     <div class="stat-row" style="margin:0 0 48px">
-      <div class="stat reveal"><div class="n">9</div><div class="l">projects delivered in South Africa and Zimbabwe</div></div>
-      <div class="stat reveal d1"><div class="n">R%(tr)s m</div><div class="l">combined value of rand-denominated projects</div></div>
-      <div class="stat reveal d2"><div class="n">US$%(td)s m</div><div class="l">combined value of dollar-denominated projects</div></div>
+      <div class="stat reveal"><div class="n" data-count>9</div><div class="l">projects delivered across Southern Africa</div></div>
+      <div class="stat reveal d1"><div class="n" data-count>R%(tr)s m</div><div class="l">combined value of rand-denominated projects</div></div>
+      <div class="stat reveal d2"><div class="n" data-count>US$%(td)s m</div><div class="l">combined value of dollar-denominated projects</div></div>
     </div>
     <div class="section-head reveal" style="margin-bottom:28px"><span class="eyebrow">Case studies</span><h2>Three projects in depth<span class="dot">.</span></h2></div>
     <div class="grid grid-3" style="margin-bottom:56px">%(cases)s</div>
@@ -1262,17 +1262,17 @@ def contact():
       <div class="reveal d1" id="offices">
         <div class="office">
           <span class="eyebrow">Head office</span>
-          <h3>Guangzhou, China</h3>
+          <h3>Guangzhou head office</h3>
           <dl>
             <dt>Address</dt><dd>%(addr)s</dd>
             <dt>Phone</dt><dd><a href="tel:%(tel)s">%(phone)s</a></dd>
             <dt>WhatsApp</dt><dd><a href="%(wa)s" rel="noopener" data-wa>%(phone)s</a></dd>
             <dt>Email</dt><dd><a href="mailto:%(email)s">%(email)s</a></dd>
-            <dt>Hours</dt><dd>Monday to Friday, 09:00 to 18:00 China Standard Time (03:00 to 12:00 in South Africa and Zimbabwe)</dd>
+            <dt>Hours</dt><dd>Monday to Friday, 09:00 to 18:00 China Standard Time (03:00 to 12:00 Central Africa Time)</dd>
           </dl>
           <a class="btn btn-light map" href="%(map)s" rel="noopener">Open in Google Maps %(ext)s</a>
         </div>
-        <div class="feature mt-2 reveal"><div class="ico">%(pin)s</div><div><h3>South Africa</h3><p>Websa Worldwide (Pty) Ltd is registered in South Africa and delivers projects across Southern Africa. Ask for a meeting in Johannesburg or on site.</p></div></div>
+        <div class="feature mt-2 reveal"><div class="ico">%(pin)s</div><div><h3>Africa delivery office</h3><p>Websa Worldwide (Pty) Ltd, registered in South Africa, delivers projects across Southern Africa. Ask for a meeting in Johannesburg or on site.</p></div></div>
         <div class="feature mt-1 reveal" id="media"><div class="ico">%(chat)s</div><div><h3>Media</h3><p>Journalists can reach a director through <a href="mailto:%(email)s?subject=Media%%20enquiry">%(email)s</a> with the subject line "Media enquiry".</p></div></div>
       </div>
     </div>
@@ -1280,7 +1280,7 @@ def contact():
 </section>
 ''' % dict(ship=I["ship"], crane=I["crane"], handshake=I["handshake"], opts=opts, email=EMAIL, wa=WA, wa_i=I["wa"], addr=addr, tel=PHONE_TEL, phone=PHONE_DISPLAY, map=MAP_URL, ext=I["ext"], pin=I["pin"], chat=I["chat"])
     ld = {"@type": "ContactPage", "name": "Contact Websa Worldwide", "url": SITE_URL + "/contact.html"}
-    return page("contact.html", "Contact | Websa Worldwide", "Contact Websa Worldwide in Guangzhou, China or South Africa. Sourcing requests, supplier offers, partnerships and media. Phone and WhatsApp +86 173 2401 0515.",
+    return page("contact.html", "Contact | Websa Worldwide", "Contact Websa Worldwide at its Guangzhou head office or its Africa delivery office. Sourcing requests, supplier offers, partnerships and media. Phone and WhatsApp +86 173 2401 0515.",
                 body, ld=ld, crumbs=[("Home", "index.html"), ("Contact", "contact.html")], search=[("Contact", "contact.html", "Guangzhou head office, phone, WhatsApp, email, hours"), ("Media enquiries", "contact.html#media", "Journalists can reach a director by email")])
 
 def legal():
@@ -1491,7 +1491,8 @@ def translate_html(html, lang, dic, fname, missing):
         if skip or not tok.strip(): out.append(tok); continue
         lead = tok[:len(tok) - len(tok.lstrip())]; trail = tok[len(tok.rstrip()):]
         core = htmlmod.unescape(tok.strip())
-        if core == "EN" and lang != "en": core = {"zh": "中文", "pt": "PT"}[lang]
+        if core in (".", "?") and lang == "zh" and out and 'class="dot"' in out[-1]: core = {".": "。", "?": "？"}[core]
+        elif core == "EN" and lang != "en": core = {"zh": "中文", "pt": "PT"}[lang]
         elif re.fullmatch(r"\d{1,2} [A-Z][a-z]+ \d{4}", core): core = localise_date(core, lang)
         else: core = tr(core)
         out.append(lead + esc(core).replace("&#x27;", "'") + trail)

@@ -571,13 +571,90 @@ body.has-bottom-bar .site-footer .inner { padding-bottom: 80px; }
 .error-page { min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 160px var(--gutter) 80px; }
 .error-page h1 { font-size: clamp(60px, 12vw, 140px); line-height: 1; }
 
+/* Phone layout */
+@media (max-width: 480px) {
+  :root { --gutter: 16px; }
+  h1 { font-size: clamp(34px, 10.5vw, 44px); }
+  h2 { font-size: clamp(26px, 7.5vw, 32px); }
+  .section { padding: 56px 0; }
+  .section-head { margin-bottom: 28px; }
+  .site-header { padding: 10px 12px; }
+  .site-header .bar { height: 58px; padding: 0 6px 0 8px; }
+  .logo-link { padding: 0 10px; }
+  .logo-link img { height: 44px; }
+  .hero .inner { padding: 120px 16px 110px; }
+  .hero .kicker { font-size: 11px; padding: 6px 12px; margin-bottom: 18px; }
+  .hero .lede { font-size: 16px; margin-bottom: 24px; }
+  .hero .btn-row .btn, .cta-strip .btn, .drawer-cta .btn, .wnav .btn { width: 100%; }
+  .pause { top: 84px; right: 12px; width: 40px; height: 40px; }
+  .page-hero .inner { padding: 120px var(--gutter) 70px; }
+  .page-hero h1 { max-width: none; }
+  .card { padding: 22px 18px 24px; }
+  .card .circle { width: 150px; }
+  .step { padding: 24px 20px; }
+  .band .panel { padding: 28px 22px; }
+  .band .photo { min-height: 220px; }
+  .bigcard { min-height: 320px; }
+  .bigcard .cap { left: 20px; right: 20px; bottom: 20px; }
+  .cta-strip { padding: 28px 22px; }
+  .stat { padding: 20px; }
+  .form-card { padding: 20px 16px; border-radius: 22px; }
+  .glance { grid-template-columns: 1fr; gap: 10px; }
+  .prose { font-size: 16px; }
+  .choices { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .choice-body { min-height: 0; padding: 12px; }
+  .wnav { flex-direction: column-reverse; }
+  .wnav [data-prev] { margin-right: 0; }
+  .office dl { grid-template-columns: 1fr; gap: 4px 0; }
+  .office dt { margin-top: 10px; }
+  .foot-brand img { height: 72px; }
+  .site-footer .inner { padding: 48px var(--gutter) 24px; }
+  .foot-bottom { flex-direction: column; align-items: flex-start; }
+  .search-overlay { padding: 76px 12px 20px; }
+  .search-box { padding: 12px; border-radius: 20px; }
+  .search-form input { font-size: 16px; }
+  .tile .disc { width: 140px; height: 140px; }
+  .track { grid-auto-columns: 78%; }
+}
+
+/* Motion */
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes pop { 0% { transform: scale(0); } 60% { transform: scale(1.35); } 100% { transform: scale(1); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+html.js .hero .kicker, html.js .hero h1, html.js .hero .lede, html.js .hero .btn-row { animation: rise .7s var(--ease) both; }
+html.js .hero h1 { animation-delay: .1s; }
+html.js .hero .lede { animation-delay: .22s; }
+html.js .hero .btn-row { animation-delay: .34s; }
+html.js .page-hero .icon, html.js .page-hero h1, html.js .page-hero .sub, html.js .page-hero .lede { animation: rise .6s var(--ease) both; }
+html.js .page-hero h1 { animation-delay: .08s; }
+html.js .page-hero .sub { animation-delay: .16s; }
+html.js .page-hero .lede { animation-delay: .24s; }
+h1 .dot, h2 .dot { display: inline-block; }
+html.js .reveal.in h2 .dot, html.js .hero h1 .dot, html.js .page-hero h1 .dot { animation: pop .55s var(--ease) .45s both; }
+html.js .reveal.in .step .num, html.js .step.reveal.in .num, html.js .value.reveal.in .ico, html.js .aud.reveal.in .ico { animation: pop .5s var(--ease) .15s both; }
+html.js .reveal.from-left { transform: translateX(-28px); }
+html.js .reveal.from-left.in { transform: none; }
+.site-header .bar { transition: box-shadow .2s, transform .35s var(--ease); }
+.site-header.hide .bar { transform: translateY(-120%); }
+.page-hero img.bg { will-change: transform; }
+.btn { transition: transform .18s var(--ease), background .2s, color .2s, border-color .2s, box-shadow .2s; }
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); } .btn:active { transform: translateY(1px) scale(.99); } }
+.tile .disc img { transition: transform .35s var(--ease); }
+@media (hover: hover) { .tile:hover .disc img { transform: scale(1.08); } }
+.wa-btn svg { animation: float 3.2s ease-in-out 1s 3; }
+.done-ico { animation: pop .6s var(--ease) both; }
+.progress span { transition: width .45s var(--ease); }
+.stat .n[data-count] { font-variant-numeric: tabular-nums; }
+
 /* Reveal: visible without JS; motion only with JS and when motion is allowed */
 html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 html.js .reveal.in { opacity: 1; transform: none; }
 html.js .reveal.d1 { transition-delay: .08s; } html.js .reveal.d2 { transition-delay: .16s; } html.js .reveal.d3 { transition-delay: .24s; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  html.js .reveal { opacity: 1; transform: none; transition: none; }
+  html.js .reveal, html.js .reveal.from-left { opacity: 1; transform: none; transition: none; }
+  html.js .hero .kicker, html.js .hero h1, html.js .hero .lede, html.js .hero .btn-row, html.js .page-hero .icon, html.js .page-hero h1, html.js .page-hero .sub, html.js .page-hero .lede, .wa-btn svg, .done-ico, html.js .reveal.in h2 .dot { animation: none; }
+  .site-header.hide .bar { transform: none; }
   .hero .slide img { transition: none; transform: none; }
   *, *::before, *::after { animation-duration: .001s !important; transition-duration: .001s !important; }
 }
