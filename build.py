@@ -323,7 +323,7 @@ def drawer_list():
 
 def lang_switcher(fname):
     opts = "".join('<li><a data-lang="%s" href="%s" lang="%s" hreflang="%s">%s</a></li>' % (l, (fname if l == "en" else "%s/%s" % (l, fname)), LANG_META[l][0], LANG_META[l][0], LANG_META[l][1]) for l in LANGS)
-    return '''<div class="lang has-menu"><button class="region nav-link" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Language">%s<span class="txt" data-lang-label>EN</span>%s</button><ul class="menu lang-menu">%s</ul></div>''' % (I["globe"], I["chev"], opts)
+    return '''<div class="lang has-menu"><button class="region nav-link" type="button" aria-expanded="false" aria-haspopup="true">%s<span class="sr-only">Language</span><span class="txt" data-lang-label>EN</span>%s</button><ul class="menu lang-menu">%s</ul></div>''' % (I["globe"], I["chev"], opts)
 
 def header(fname):
     return '''
@@ -379,7 +379,7 @@ def footer():
         <p>Wealth Building Strategy for All. Registered in Guangzhou, China and in South Africa. Working across Southern Africa since 1999.</p>
       </div>
       <div>
-        <h4>What we do</h4>
+        <h3 class="foot-h">What we do</h3>
         <ul>
           <li><a href="sourcing.html">Import, export and logistics</a></li>
           <li><a href="energy.html">Energy and petroleum</a></li>
@@ -389,7 +389,7 @@ def footer():
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3 class="foot-h">Company</h3>
         <ul>
           <li><a href="about.html">Who we are</a></li>
           <li><a href="team.html">Leadership and team</a></li>
@@ -399,7 +399,7 @@ def footer():
         </ul>
       </div>
       <div>
-        <h4>Work with us</h4>
+        <h3 class="foot-h">Work with us</h3>
         <ul>
           <li><a href="quote.html">Get a quotation</a></li>
           <li><a href="contact.html#suppliers">Suppliers and manufacturers</a></li>
@@ -408,7 +408,7 @@ def footer():
         </ul>
       </div>
       <div>
-        <h4>Head office</h4>
+        <h3 class="foot-h">Head office</h3>
         <ul class="foot-contact">
           <li>%(pin)s<span>%(addr)s</span></li>
           <li>%(phone_i)s<a href="tel:%(tel)s">%(phone)s</a></li>
@@ -431,10 +431,10 @@ def footer():
     </div>
   </div>
 </footer>
-<div class="float-wa">
+<aside class="float-wa" aria-label="Quick contact">
   <a class="wa-btn" href="%(wa)s" rel="noopener" data-wa data-track="whatsapp_click">%(wa_i)s<span>Chat on WhatsApp</span></a>
   <a class="call-btn" href="tel:%(tel)s" aria-label="Call Websa Worldwide">%(phone_i)s</a>
-</div>
+</aside>
 <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
   <div class="video-box"><button type="button" class="icon-btn video-close" data-close-video aria-label="Close video">%(close)s</button><div class="video-frame"></div></div>
 </div>
@@ -518,7 +518,7 @@ def page(fname, title, desc, body, body_class="", extra_head="", ld=None, crumbs
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="assets/fonts/montserrat-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.min.css">
 <script type="application/ld+json">%(ld)s</script>
 %(analytics)s
 %(extra)s
@@ -530,7 +530,7 @@ def page(fname, title, desc, body, body_class="", extra_head="", ld=None, crumbs
 </main>
 %(footer)s
 %(consent)s
-<script src="js/site.js" defer></script>
+<script src="js/site.min.js" defer></script>
 </body>
 </html>
 ''' % dict(title=esc(title), desc=esc(desc), url=url, alts=alts, ogt=esc(og_title or title), site=SITE_URL, og=og, ld=ld_json, analytics=analytics_head(), extra=extra_head,
@@ -667,13 +667,13 @@ def home():
 </section>
 
 <nav class="dots-nav" aria-label="Page sections">
-  <a href="#intro"><span>Intro</span><i></i></a>
-  <a href="#mission"><span>Mission</span><i></i></a>
-  <a href="#sectors"><span>What we do</span><i></i></a>
-  <a href="#brands"><span>Brands</span><i></i></a>
-  <a href="#difference"><span>Making a difference</span><i></i></a>
-  <a href="#projects"><span>Projects</span><i></i></a>
-  <a href="#websites"><span>Work with us</span><i></i></a>
+  <a href="#intro" aria-label="Intro"><span>Intro</span><i></i></a>
+  <a href="#mission" aria-label="Mission"><span>Mission</span><i></i></a>
+  <a href="#sectors" aria-label="What we do"><span>What we do</span><i></i></a>
+  <a href="#brands" aria-label="Brands"><span>Brands</span><i></i></a>
+  <a href="#difference" aria-label="Making a difference"><span>Making a difference</span><i></i></a>
+  <a href="#projects" aria-label="Projects"><span>Projects</span><i></i></a>
+  <a href="#websites" aria-label="Work with us"><span>Work with us</span><i></i></a>
 </nav>
 
 <div class="bottom-bar" aria-label="Quick links">
@@ -1228,9 +1228,9 @@ def contact():
 <section class="section">
   <div class="shell">
     <div class="audiences">
-      <div class="aud reveal" id="buyers"><div class="ico">%(ship)s</div><h3>Buyers and importers</h3><p>Businesses in Africa that want vehicles, machinery, electronics, textiles or consumer goods sourced from China and delivered to the door.</p><a class="btn btn-primary" href="quote.html">Get a quotation</a></div>
-      <div class="aud reveal d1" id="suppliers"><div class="ico">%(crane)s</div><h3>Suppliers and manufacturers</h3><p>Factories and distributors who want a reliable route into Southern African markets through a partner registered at both ends.</p><a class="btn btn-outline" href="?type=Supplier+or+manufacturer#enquiry">Offer your products</a></div>
-      <div class="aud reveal d2" id="investors"><div class="ico">%(handshake)s</div><h3>Investors and partners</h3><p>Public bodies, development programmes and investors who want projects that deliver returns and leave skills behind.</p><a class="btn btn-outline" href="?type=Investment+or+partnership#enquiry">Propose a partnership</a></div>
+      <div class="aud reveal" id="buyers"><div class="ico">%(ship)s</div><h2>Buyers and importers</h2><p>Businesses in Africa that want vehicles, machinery, electronics, textiles or consumer goods sourced from China and delivered to the door.</p><a class="btn btn-primary" href="quote.html">Get a quotation</a></div>
+      <div class="aud reveal d1" id="suppliers"><div class="ico">%(crane)s</div><h2>Suppliers and manufacturers</h2><p>Factories and distributors who want a reliable route into Southern African markets through a partner registered at both ends.</p><a class="btn btn-outline" href="?type=Supplier+or+manufacturer#enquiry">Offer your products</a></div>
+      <div class="aud reveal d2" id="investors"><div class="ico">%(handshake)s</div><h2>Investors and partners</h2><p>Public bodies, development programmes and investors who want projects that deliver returns and leave skills behind.</p><a class="btn btn-outline" href="?type=Investment+or+partnership#enquiry">Propose a partnership</a></div>
     </div>
   </div>
 </section>
@@ -1377,7 +1377,24 @@ def og_images():
         d.text((80, 540), "websaworldwide.com  |  Wealth Building Strategy for All", font=f_small, fill=(212, 167, 44))
         im.save(path, "JPEG", quality=86)
 
+def minify_assets():
+    """site.min.css by a conservative whitespace strip; site.min.js by terser when node is present, else a copy."""
+    import subprocess, shutil
+    css = open(os.path.join(OUT, "css", "site.css"), encoding="utf-8").read()
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\s+", " ", css)
+    css = re.sub(r"\s*([{};,>])\s*", r"\1", css)
+    css = re.sub(r":\s+", ":", css).replace(";}", "}").strip()
+    open(os.path.join(OUT, "css", "site.min.css"), "w", encoding="utf-8").write(css)
+    src, dst = os.path.join(OUT, "js", "site.js"), os.path.join(OUT, "js", "site.min.js")
+    try:
+        r = subprocess.run('npx --yes terser "%s" -c -m -o "%s"' % (src, dst), shell=True, capture_output=True, text=True, timeout=240)
+        if r.returncode != 0 or not os.path.exists(dst): raise RuntimeError(r.stderr[:200])
+    except Exception as e:
+        print("terser unavailable, shipping unminified js:", e); shutil.copyfile(src, dst)
+
 def extras():
+    minify_assets()
     idx = search_index()
     json.dump(idx, open(os.path.join(OUT, "search-index.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     urls = ""
@@ -1443,7 +1460,7 @@ def translate_html(html, lang, dic, fname, missing):
             low = tok.lower()
             if low.startswith(("<script", "<style")):
                 skip += 1
-                tok = re.sub(r'(src)="(js/)', r'="../', tok)
+                tok = re.sub(r'src="(js/)', lambda m: 'src="../%s' % m.group(1), tok)
             elif low.startswith(("</script", "</style")): skip = max(0, skip - 1)
             elif not low.startswith("<!"):
                 def rep(m):
