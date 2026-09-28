@@ -1,0 +1,10 @@
+{
+  "form_endpoint": "",
+  "analytics": {
+    "provider": "",
+    "plausible_domain": "websaworldwide.com",
+    "ga4_id": ""
+  },
+  "site_url": "https://websaworldwide.com",
+  "languages": ["en", "zh", "pt"]
+}

@@ -1,0 +1,16 @@
+name: Site audit
+on:
+  push:
+  pull_request:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow fonttools brotli
+      - run: python tools/audit.py
+      - name: Fail if the committed site differs from the build
+        run: git diff --exit-code -- site

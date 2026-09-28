@@ -1,0 +1,5 @@
+site.config.json
+__pycache__/
+research/*.png
+research/*.html
+tools/fonts/
