@@ -64,6 +64,10 @@ Lighthouse desktop against the local server, after the axe fixes: performance, a
 
 Verified in the browser: dropdown menus, drawer, search, video modal, language switch, quote wizard end to end (URL prefill, per-step validation, review, reference, WhatsApp confirmation, draft clearing), filters with translated counters, WhatsApp prefill, no horizontal overflow at 375 px, no console errors.
 
+## Copy rules the owner set (2026-10-11)
+
+Second person, problem first, present tense: say how we solve it now and partner now. Hero: "From China to you" and only the four services beneath it. No prices on the site; projects carry a five-dot scale and an outcome line instead, and stats are plain facts. Keep pages uncluttered. Avoid the word sourcing and the China, Zimbabwe, South Africa triad in marketing lines. `tools/copy_pass.py` holds the replacement pairs from the pass that applied this.
+
 ## Facts used and where they came from
 
 Everything comes from the client's current website, their Instagram bio, their YouTube channel, or the owner's messages on 2026-09-27. No invented testimonials, statistics or client names beyond the partners the client already names (Lesedi Solar PV, Letsatsi Solar PV, Philips Lighting, Ndewere Corporation, NDECOR Trading, Ekhaya).
