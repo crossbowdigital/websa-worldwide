@@ -6,7 +6,7 @@ Eighteen pages in three languages (English, Simplified Chinese, Portuguese), a f
 
 ## Live preview
 
-https://crossbowdigital.github.io/websa-worldwide/ (GitHub Pages, repo crossbowdigital/websa-worldwide, deployed by `.github/workflows/pages.yml` on every push to main). Canonical, hreflang and sitemap URLs still point at websaworldwide.com, so search engines are steered away from the preview; that is deliberate until the real domain is pointed here.
+Primary: https://websa-worldwide.vercel.app/ (Vercel project websa-worldwide on the Zim Estates team, deployed from the `site/` folder with `npx vercel deploy --prod --yes --scope zim-estates-projects`; `site/vercel.json` sets caching and security headers). Mirror: https://crossbowdigital.github.io/websa-worldwide/ (GitHub Pages, repo crossbowdigital/websa-worldwide, deployed by `.github/workflows/pages.yml` on every push to main). Canonical, hreflang and sitemap URLs still point at websaworldwide.com, so search engines are steered away from the preview; that is deliberate until the real domain is pointed here. On 2026-10-11 the GitHub Pages address range (185.199.108 to 111) was unreachable from the local ISP while github.com and Vercel were fine, so the Vercel address is the one to give out.
 
 ## Run it
 

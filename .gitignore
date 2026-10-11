@@ -3,3 +3,4 @@ __pycache__/
 research/*.png
 research/*.html
 tools/fonts/
+site/.vercel/
