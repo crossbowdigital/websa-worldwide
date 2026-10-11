@@ -83,16 +83,16 @@ I = {
 SECTORS = [
   dict(slug="sourcing", tag="Trade", name="Import, export and logistics", img="assets/img/warehouse.jpg",
        alt="Forklift moving pallets inside a distribution warehouse",
-       short="Need equipment, vehicles or stock from China without the risk? We find the factory, check the goods and land them at your door, paperwork included."),
+       short="China's products to your door, and yours to the world, by our own logistics team."),
   dict(slug="energy", tag="Energy", name="Energy and petroleum", img="assets/img/solar-farm.jpg",
        alt="Rows of solar panels on a utility-scale solar farm",
-       short="Is an unreliable grid holding you back? We deliver solar, electrical and fuel solutions and train your people to keep them running."),
+       short="Solar, electrical and fuel solutions, with your people trained to keep them running."),
   dict(slug="construction", tag="Build", name="Construction, mining, signage and print", img="assets/img/construction.jpg",
        alt="Construction workers and an excavator on a building site",
-       short="Building, mining or opening a storefront? We supply the machines, manage the project and put your name on the door."),
+       short="Machines, project management and the signage that puts your name on the door."),
   dict(slug="agriculture", tag="Agriculture", name="Agriculture", img="assets/img/harvest.jpg",
        alt="Farm workers harvesting vegetables in a field",
-       short="Want your farm to earn like a business? We bring the seed, equipment, finance routes and training that turn a harvest into a livelihood."),
+       short="Seed, equipment, finance routes and training that turn a harvest into a livelihood."),
 ]
 
 BRANDS = [
@@ -131,7 +131,7 @@ PROJECTS = [
 ]
 
 VIDEOS = [
-  dict(id="m7uRI-iZhX8", title="Buying from China made easy through Websa", dur="0:54", thumb="assets/video/m7uRI-iZhX8.jpg", hero=True),
+  dict(id="m7uRI-iZhX8", title="The power of China, brought to you by Websa", dur="0:54", thumb="assets/video/m7uRI-iZhX8.jpg", hero=True),
   dict(id="9ER54qSuKSU", title="Connecting Africa to China's top manufacturers", dur="", thumb="assets/video/9ER54qSuKSU.jpg"),
   dict(id="pdPVVnpO2Cc", title="Connecting Africa to China's manufacturing industry", dur="", thumb="assets/video/pdPVVnpO2Cc.jpg"),
   dict(id="M96_JAnpQXs", title="Solar and power tools direct from China", dur="", thumb="assets/video/M96_JAnpQXs.jpg"),
@@ -278,6 +278,7 @@ def case_card(c, i=0):
 
 # ---------------------------------------------------------------- navigation
 NAV_LEFT = [
+  ("Our brands", [("brands.html", "Brand portfolio", "Kudus, Runningman, Zarus, EnergyOn and more")]),
   ("What we do", [
     ("services.html", "All services", "Four sectors, one way of working"),
     ("sourcing.html", "Import, export and logistics", "Guangzhou to Africa, door to door"),
@@ -285,7 +286,6 @@ NAV_LEFT = [
     ("construction.html", "Construction, mining and print", "Build, extract, brand"),
     ("agriculture.html", "Agriculture", "Farming, seed and rural livelihoods"),
   ]),
-  ("Our brands", [("brands.html", "Brand portfolio", "Kudus, Runningman, Zarus, EnergyOn and more")]),
 ]
 NAV_RIGHT = [
   ("Our story", [
@@ -545,9 +545,7 @@ def page(fname, title, desc, body, body_class="", extra_head="", ld=None, crumbs
 
 # ---------------------------------------------------------------- pages
 def home():
-    slides = [("assets/img/hero-produce-factory.jpg", "A farmer holding a crate of fresh produce, with a Guangzhou factory floor behind her"),
-              ("assets/img/warehouse.jpg", "Forklift moving pallets inside a distribution warehouse"),
-              ("assets/img/solar-farm.jpg", "Rows of solar panels on a utility-scale solar farm")]
+    slides = [("assets/img/hero-produce-factory.jpg", "A farmer holding a crate of fresh produce, with a Guangzhou factory floor behind her")]
     slides_html = "".join('<div class="slide%s">%s</div>' % (" is-active" if i == 0 else "", pic(s, a, loading="eager" if i == 0 else "lazy", fetchpriority="high" if i == 0 else None)) for i, (s, a) in enumerate(slides))
     hero_video = next(v for v in VIDEOS if v.get("hero"))
     sector_cards = ""
@@ -569,7 +567,6 @@ def home():
     body = '''
 <section class="hero" id="intro" aria-label="Introduction">
   <div class="slides">%(slides)s</div>
-  <button class="pause" type="button" aria-pressed="false" aria-label="Pause background slideshow">%(pause)s%(play)s</button>
   <div class="inner">
     <h1>From China to you<span class="dot">.</span></h1>
     <ul class="hero-services list-reset">
@@ -586,38 +583,14 @@ def home():
   %(wave)s
 </section>
 
-<section class="section" id="mission">
-  <div class="content">
-    <div class="section-head reveal">
-      <span class="eyebrow">Why we exist</span>
-      <h2>Your growth is the strategy<span class="dot">.</span></h2>
-      <p class="lede">WEBSA stands for Wealth Building Strategy for All: the equipment, the partners and the skills that let you build wealth yourself. Since 1999, now brought from Guangzhou straight to you.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><div class="num">1</div><h3>Tell us the problem</h3><p>A machine you cannot find, a tender you need to win, a farm that should earn more. We turn it into a costed plan with suppliers, landed cost, timeline and a funding route.</p></div>
-      <div class="step reveal d1"><div class="num">2</div><h3>We make it happen</h3><p>We procure, inspect, ship, clear and install. When conditions change mid-project, and they do, our team on the ground adapts so your schedule does not slip.</p></div>
-      <div class="step reveal d2"><div class="num">3</div><h3>You own it, fully</h3><p>We stay until it runs and train your people to operate and maintain it, so the value stays with you long after we leave.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="section tint" id="sectors">
-  <div class="shell">
-    <div class="section-head reveal">
-      <span class="eyebrow">What we solve</span>
-      <h2>Whatever you need to move, build or grow<span class="dot">.</span></h2>
-      <p class="lede">One accountable partner from the first call to the hand-over.</p>
-    </div>
-    <div class="cards">%(cards)s</div>
-    <div class="btn-row center mt-3 reveal"><a class="btn btn-outline" href="services.html">See everything we can do for you</a></div>
-  </div>
-</section>
 
 <section class="section" id="brands">
   <div class="shell">
     <div class="section-head reveal">
-      <span class="eyebrow">Stock our brands</span>
-      <h2>Products your customers already ask for<span class="dot">.</span></h2>
+      <span class="eyebrow">Our brands</span>
+      <h2>Built with the power of China. Made for you<span class="dot">.</span></h2>
+      <p class="lede">Ten brands, from baby care to vehicle parts and energy, made with China's scale and delivered by our own teams.</p>
     </div>
     <div class="carousel reveal">
       <div class="track" tabindex="0" aria-label="Brand carousel">%(tiles)s</div>
@@ -627,7 +600,34 @@ def home():
         <button class="arrow next" type="button" aria-label="Next brands">%(ar)s</button>
       </div>
     </div>
-    <div class="btn-row center mt-2 reveal"><a class="btn btn-outline" href="brands.html">Explore the portfolio</a></div>
+    <div class="btn-row center mt-2 reveal"><a class="btn btn-outline" href="brands.html">Meet every brand</a></div>
+  </div>
+</section>
+
+<section class="section tint" id="mission">
+  <div class="content">
+    <div class="section-head reveal">
+      <span class="eyebrow">The power of China</span>
+      <h2>Scale, speed and technology, working for you<span class="dot">.</span></h2>
+      <p class="lede">China builds faster, at a scale and price no one else matches. We put that power behind our brands and your projects.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><h3>Tell us the problem</h3><p>A product your market is missing, a tender you need to win, a farm that should earn more. We turn it into a plan with a delivered price, a timeline and a funding route.</p></div>
+      <div class="step reveal d1"><div class="num">2</div><h3>We build it and bring it</h3><p>Our brands and projects are made with China's manufacturing strength, then shipped, cleared and installed by our own team, so your schedule does not slip.</p></div>
+      <div class="step reveal d2"><div class="num">3</div><h3>You own it, fully</h3><p>We stay until it runs and train your people to operate and maintain it, so the value stays with you long after we leave.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sectors">
+  <div class="shell">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we solve</span>
+      <h2>Whatever you need to move, build or grow<span class="dot">.</span></h2>
+      <p class="lede">Four divisions, one accountable partner.</p>
+    </div>
+    <div class="cards">%(cards)s</div>
+    <div class="btn-row center mt-3 reveal"><a class="btn btn-outline" href="services.html">See everything we can do for you</a></div>
   </div>
 </section>
 
@@ -638,70 +638,33 @@ def home():
       <div class="panel on-dark">
         <span class="eyebrow">Proof, not promises</span>
         <h2>We lit a town and trained its people to keep the lights on<span class="dot">.</span></h2>
-        <p>In Postmasburg we did more than install solar street lights with Lesedi Solar PV and Philips Lighting. We trained local residents as installers, then ran two years of supply and training for two 75 MW plants.</p>
+        <p>In Postmasburg we installed solar street lights with Lesedi Solar PV and Philips Lighting, trained local residents as installers, then served two 75 MW plants for two years.</p>
         <a class="btn btn-light" href="case-postmasburg.html">See how we did it</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="projects">
-  <div class="content">
-    <div class="section-head reveal">
-      <span class="eyebrow">Delivered for partners like you</span>
-      <h2>Problems we have already solved<span class="dot">.</span></h2>
-      <p class="lede">Nine projects across Southern Africa, each one started with someone who needed help. Yours can be next.</p>
-    </div>
-    <ul class="projects list-reset">%(proj)s</ul>
-    <div class="btn-row center mt-3 reveal"><a class="btn btn-outline" href="projects.html">See all nine</a></div>
-  </div>
+<section class="section" id="start">
+  <div class="shell"><div class="cta-strip reveal">
+    <div><h2>Bring the power of China to your business<span class="dot">.</span></h2><p>Tell us the product, the quantity and the destination. You get a delivered price and a timeline within one working day.</p></div>
+    <div class="btn-row"><a class="btn btn-gold" href="quote.html">Get your quotation today</a><a class="btn btn-ghost" href="contact.html#investors">Partner with us</a></div>
+  </div></div>
 </section>
 
-<section class="section tint" id="websites">
-  <div class="shell">
-    <div class="bigcards">
-      <a class="bigcard reveal" href="quote.html">
-        %(big1)s
-        <div class="cap"><h3>Need it from China?</h3><p>Tell us the product, the quantity and the destination. You get suppliers, a landed cost and a timeline within one working day.</p><span class="more">Start now %(ar)s</span></div>
-      </a>
-      <a class="bigcard reveal d1" href="contact.html#investors">
-        %(big2)s
-        <div class="cap"><h3>Want a partner, not a supplier?</h3><p>Investors, suppliers and public bodies: let us build something together that leaves skills and returns behind.</p><span class="more">Talk to us today %(ar)s</span></div>
-      </a>
-    </div>
-  </div>
-</section>
 
-<nav class="dots-nav" aria-label="Page sections">
-  <a href="#intro" aria-label="Intro"><span>Intro</span><i></i></a>
-  <a href="#mission" aria-label="Why we exist"><span>Why we exist</span><i></i></a>
-  <a href="#sectors" aria-label="What we solve"><span>What we solve</span><i></i></a>
-  <a href="#brands" aria-label="Brands"><span>Brands</span><i></i></a>
-  <a href="#difference" aria-label="Proof"><span>Proof</span><i></i></a>
-  <a href="#projects" aria-label="Projects"><span>Projects</span><i></i></a>
-  <a href="#websites" aria-label="Start today"><span>Start today</span><i></i></a>
-</nav>
 
-<div class="bottom-bar" aria-label="Quick links">
-  <div class="left">
-    <div class="bb-group"><button type="button" aria-expanded="false">Partners &amp; buyers %(chev)s</button>
-      <div class="bb-pop"><a href="quote.html">Get a quotation</a><a href="contact.html#suppliers">Suppliers and manufacturers</a><a href="contact.html#investors">Investors and partners</a></div></div>
-    <div class="bb-group"><button type="button" aria-expanded="false">Our company %(chev)s</button>
-      <div class="bb-pop"><a href="about.html">Who we are</a><a href="team.html">Leadership and team</a><a href="brands.html">Brands</a><a href="projects.html">Projects</a></div></div>
-  </div>
-  <div class="mid">&copy; <span data-year>%(year)s</span> Websa Worldwide</div>
-  <div class="right"><a href="contact.html">Contact</a><a href="%(wa)s" rel="noopener" data-wa>WhatsApp %(ext)s</a></div>
-</div>
+
 ''' % dict(slides=slides_html, pause=I["pause"], play=I["play"], playi=I["playbig"], vid=hero_video["id"], vtitle=esc(hero_video["title"]), vdur=hero_video["dur"], wave=wave(), cards=sector_cards, tiles=tiles, al=I["arrowl"], ar=I["arrow"],
            bandpic=pic("assets/img/solar-farm.jpg", "Solar panels stretching across a plain under a clear sky", sizes="(max-width: 900px) 100vw, 55vw"),
            big1=pic("assets/img/garment-factory.jpg", "", sizes="(max-width: 760px) 100vw, 50vw"), big2=pic("assets/img/helmet-worker.jpg", "", sizes="(max-width: 760px) 100vw, 50vw"),
            proj=proj, chev=I["chev"], wa=WA, ext=I["ext"], year=TODAY.year)
-    search = [("Why we exist", "index.html#mission", "Your growth is the strategy. Tell us the problem, we make it happen, you own it fully."),
+    search = [("The power of China", "index.html#mission", "Scale, speed and technology, working for you. Tell us the problem, we build it and bring it, you own it fully."),
               ("What we solve", "index.html#sectors", "Whatever you need to move, build or grow"),
               ("Proof, not promises", "index.html#difference", "We lit a town and trained its people to keep the lights on")]
-    return page("index.html", "Websa Worldwide | From China to you: trade, energy, construction and agriculture",
-                "Tell Websa Worldwide what your business needs and we find it, check it, ship it and deliver it to your door from Guangzhou, then train your people to run it. Trade, energy, construction and agriculture since 1999.",
-                body, body_class="has-bottom-bar", search=search, og_title="From China to you.")
+    return page("index.html", "Websa Worldwide | From China to you: our brands, your projects, the power of China",
+                "Websa Worldwide brings the power of China to you: ten brands of our own and projects in trade, energy, construction and agriculture, built with China's manufacturing strength and delivered by our own teams since 1999.",
+                body, search=search, og_title="From China to you.")
 
 def about():
     tl = [("1999", "A programme for farmers", "Lazarus Magura starts WEBSA, Wealth Building Strategy for All, in Zimbabwe: investment facilitation, equipment procurement, training and coaching to make farmers and their value chain self-sufficient and profitable."),
@@ -781,7 +744,7 @@ def about():
     </div>
   </div>
 </section>
-''' % dict(pic1=pic("assets/img/harvest.jpg", "Farm workers harvesting vegetables", sizes="(max-width: 900px) 100vw, 45vw"), tl=tl_html, globe=I["globe"], pin=I["pin"], grid=I["grid"], tag=I["tag"], values=values_html, users=I["users"], spark=I["spark"], handshake=I["handshake"], leaf=I["leaf"]) + cta_strip("Ready to build something that lasts?", "Tell us what you need to buy, build or grow. A director replies within one working day.", primary=("quote.html", "Get your quotation today"), secondary=("projects.html", "See what we have solved"))
+''' % dict(pic1=pic("assets/img/harvest.jpg", "Farm workers harvesting vegetables", sizes="(max-width: 900px) 100vw, 45vw"), tl=tl_html, globe=I["globe"], pin=I["pin"], grid=I["grid"], tag=I["tag"], values=values_html, users=I["users"], spark=I["spark"], handshake=I["handshake"], leaf=I["leaf"]) + cta_strip("Ready to build something that lasts?", "Tell us what you want to build or grow. A director replies within one working day.", primary=("quote.html", "Get your quotation today"), secondary=("projects.html", "See what we have solved"))
     search = [("Our history", "about.html#timeline", "Twenty-five years, one strategy: 1999 to 2024"), ("Our values", "about.html#values", "Integrity, innovation, sustainability, excellence, collaboration"), ("Leadership", "about.html#leadership", "Lazarus Magura and Collins Ndewere")]
     return page("about.html", "Who we are | Websa Worldwide", "Who Websa Worldwide is and why it exists: a Guangzhou company built to give you the equipment, partners and skills to build wealth yourself. History, values and the directors who answer your call.",
                 body, ld={"@type": "AboutPage", "name": "Who we are", "url": SITE_URL + "/about.html"}, crumbs=[("Home", "index.html"), ("Who we are", "about.html")], search=search)
@@ -864,8 +827,8 @@ def services():
   <div class="shell">
     <div class="section-head reveal"><span class="eyebrow">Also at your service</span><h2>Advice and support when you need it<span class="dot">.</span></h2></div>
     <div class="features">
-      <div class="feature reveal"><div class="ico">%(chat)s</div><div><h3>Business advisory</h3><p>Market entry, supplier strategy and the funding routes open to you when you buy from China.</p></div></div>
-      <div class="feature reveal d1"><div class="ico">%(spark)s</div><div><h3>Technical consultancy</h3><p>Specification, factory audits and quality inspection before you pay for or ship anything.</p></div></div>
+      <div class="feature reveal"><div class="ico">%(chat)s</div><div><h3>Business advisory</h3><p>Market entry, product strategy and the funding routes open to you when you work with China.</p></div></div>
+      <div class="feature reveal d1"><div class="ico">%(spark)s</div><div><h3>Technical consultancy</h3><p>Specification, quality checks and factory audits before anything ships to you.</p></div></div>
       <div class="feature reveal d2"><div class="ico">%(grid)s</div><div><h3>Project management</h3><p>One accountable team from your purchase order to commissioning, with reporting you can put in front of your board.</p></div></div>
       <div class="feature reveal d3"><div class="ico">%(users)s</div><div><h3>Training and skills development</h3><p>Your operators, installers and maintenance teams trained on site, so the asset keeps working after we leave.</p></div></div>
     </div>
@@ -883,7 +846,7 @@ def video_reel():
     return '''
 <section class="section tint" id="reel">
   <div class="shell">
-    <div class="section-head reveal"><span class="eyebrow">From the factory floor</span><h2>See the route from factory to you<span class="dot">.</span></h2>
+    <div class="section-head reveal"><span class="eyebrow">From the factory floor</span><h2>See the power of China at work for you<span class="dot">.</span></h2>
       <p class="lede">Short films from our Guangzhou team. Videos load from YouTube only when you press play.</p></div>
     <div class="vgrid">%s</div>
   </div>
@@ -923,7 +886,7 @@ def sector_page(slug, title, sub, lede, img, alt, icon, intro_h, intro_p, offers
 </section>
 %(extra)s
 %(proj)s
-''' % dict(ih=intro_h, ip=intro_p, oh=offers_h, offers=offers_html, spic=pic(side_img, side_alt, sizes="(max-width: 900px) 100vw, 50vw"), sh=side_h, checks=checks(side_items), extra=extra, proj=proj_section) + cta_strip("Tell us what you need today.", "Send a specification, a photo or a rough idea. You get suppliers, a landed cost and a timeline back within one working day.", primary=("quote.html", "Get your quotation"))
+''' % dict(ih=intro_h, ip=intro_p, oh=offers_h, offers=offers_html, spic=pic(side_img, side_alt, sizes="(max-width: 900px) 100vw, 50vw"), sh=side_h, checks=checks(side_items), extra=extra, proj=proj_section) + cta_strip("Tell us what you need today.", "Send a specification, a photo or a rough idea. You get a delivered price and a timeline back within one working day.", primary=("quote.html", "Get your quotation"))
     ld = {"@type": "Service", "name": title, "serviceType": title, "provider": {"@id": SITE_URL + "/#org"}, "areaServed": ["ZA", "ZW", "MZ", "AO", "CN"], "description": lede}
     return page(slug + ".html", title + " | Websa Worldwide", first_sentences(lede), body, ld=ld, crumbs=[("Home", "index.html"), ("What we do", "services.html"), (title, slug + ".html")],
                 search=[(h, slug + ".html", p) for h, p in offers])
@@ -934,33 +897,33 @@ def sourcing():
   <div class="content">
     <div class="section-head reveal"><span class="eyebrow">How it works for you</span><h2>From your brief to your door<span class="dot">.</span></h2></div>
     <div class="steps">
-      <div class="step reveal"><div class="num">1</div><h3>Brief and quotation</h3><p>You tell us what you need. We shortlist factories, check them, and quote a landed cost that includes freight, duties and clearance, not just the factory price.</p></div>
-      <div class="step reveal d1"><div class="num">2</div><h3>Inspection and shipping</h3><p>Our Guangzhou team inspects the goods before they leave, consolidates your order and books air, sea or road freight to suit the budget and the deadline.</p></div>
+      <div class="step reveal"><div class="num">1</div><h3>Brief and quotation</h3><p>You tell us what you need. We match it from our brands and our manufacturing partners and quote a delivered price that includes freight, duties and clearance.</p></div>
+      <div class="step reveal d1"><div class="num">2</div><h3>Quality and shipping</h3><p>Our Guangzhou team checks the goods before they leave, consolidates your order and books air, sea or road freight to suit your budget and deadline.</p></div>
       <div class="step reveal d2"><div class="num">3</div><h3>Clearance and delivery</h3><p>We handle documentation and customs at the destination and deliver to your warehouse, site or showroom, with training where the goods need it.</p></div>
     </div>
     <div class="grid grid-4 mt-3">
-      <div class="value reveal"><div class="ico">%(ship)s</div><h3>Automobiles</h3><p>Vehicles supplied from China, Japan, Singapore and Durban.</p></div>
-      <div class="value reveal d1"><div class="ico">%(spark)s</div><h3>Electronics</h3><p>Consumer and commercial electronics, factory-direct.</p></div>
-      <div class="value reveal d2"><div class="ico">%(tag)s</div><h3>Textiles</h3><p>Garments and fabric from inspected Guangzhou factories.</p></div>
-      <div class="value reveal d3"><div class="ico">%(crane)s</div><h3>Machinery</h3><p>Farming, mining and construction equipment with spares.</p></div>
+      <div class="value reveal"><div class="ico">%(ship)s</div><h3>Automobiles</h3><p>Vehicles and Bigman Autospares parts, delivered from China, Japan, Singapore and Durban.</p></div>
+      <div class="value reveal d1"><div class="ico">%(spark)s</div><h3>Electronics</h3><p>Consumer and commercial electronics with China's technology behind them.</p></div>
+      <div class="value reveal d2"><div class="ico">%(tag)s</div><h3>Textiles</h3><p>Garments and fabric made in Guangzhou to your specification.</p></div>
+      <div class="value reveal d3"><div class="ico">%(crane)s</div><h3>Machinery</h3><p>Farming, mining and construction equipment, with spares and training.</p></div>
     </div>
     <div class="btn-row center mt-3 reveal"><a class="btn btn-gold" href="quote.html">Start your quotation now</a></div>
   </div>
 </section>''' % dict(ship=I["ship"], spark=I["spark"], tag=I["tag"], crane=I["crane"]) + video_reel()
-    return sector_page("sourcing", "Import, export and logistics", "From the factory to your door.",
-        "Need vehicles, machinery, electronics, textiles or consumer goods from China without the guesswork? From Guangzhou we procure, inspect and ship for you, and handle the documents, freight and customs so your goods arrive on time and on budget.",
+    return sector_page("sourcing", "Import, export and logistics", "The power of China, delivered to your door.",
+        "Vehicles, machinery, electronics, textiles, consumer goods: Websa brings China's products to you and moves yours to the world, with our own logistics team handling documents, freight and customs so everything arrives on time and on budget.",
         "assets/img/warehouse-trucks.jpg", "Trucks loading at a logistics warehouse", I["ship"],
-        "Your goods, handled end to end", "Years of connecting African buyers with Chinese manufacturers, and the logistics discipline to make every shipment of yours efficient and cost-effective.",
+        "Your goods, handled end to end", "Our own brands, our own warehouses and our own logistics discipline, so every shipment of yours is efficient and arrives when we said it would.",
         [("Import and export services", "We manage the complexity for you: regulatory compliance, documentation and customs procedures, so your transaction runs smoothly."),
-         ("Logistics management", "Warehousing, transport and distribution designed around your supply chain, so your deliveries arrive when you said they would."),
+         ("Logistics management", "Warehousing, transport and distribution run by our team around your business, so your deliveries arrive when you said they would."),
          ("Freight forwarding", "Air, sea and land freight tailored to your cargo, budget and deadline."),
          ("Customs clearance", "An experienced team that clears every one of your shipments on time, without surprises at the border."),
-         ("Supply chain solutions", "Strategic insight and practical fixes that cut your costs and lift efficiency across your whole chain.")],
+         ("Supply chain solutions", "Practical fixes from a company that runs its own supply chain, to cut your costs and lift efficiency across yours.")],
         "What we do for you", "One accountable partner at both ends of your route",
         ["A Guangzhou company with its own delivery team in Africa, so someone is accountable at both ends of the route.",
-         "Factory inspections before payment, not photographs after shipping.",
-         "Landed-cost quotations that include freight, insurance, duties and clearance.",
-         "Vehicles, farming equipment and mining equipment already delivered for clients in the region."],
+         "Our own brands and our own quality checks before anything ships to you.",
+         "Delivered prices that include freight, insurance, duties and clearance.",
+         "Vehicles, farming equipment and mining equipment already delivered for partners in the region."],
         "assets/img/garment-factory.jpg", "Sewing line inside a Guangzhou garment factory", ["trade"], extra)
 
 def energy():
@@ -973,7 +936,7 @@ def energy():
         [("Solar street lighting", "Solar street lights procured and installed for your municipality or mine, with your residents trained as the installers."),
          ("Utility-scale programme delivery", "Your plant's socio-economic and enterprise development commitments met: procurement, supply and training, evidenced."),
          ("Electricity and alternative energy", "Reliable power where your grid is weak or absent."),
-         ("Petroleum supply", "Fuel and petroleum products procured and supplied to keep your operation moving."),
+         ("Petroleum supply", "Fuel and petroleum products supplied to keep your operation moving."),
          ("Training and skills transfer", "Every installation leaves your people able to operate and maintain it.")],
         "What we deliver for you", "What you can hold us to on every site",
         ["Integrity: the highest ethical standards in every operation and interaction.",
@@ -990,7 +953,7 @@ def construction():
         "Four trades, one standard, for you", "Whether your job is a building, a mine site, a fleet of signs or a print run, you get the same discipline: clear specification, the right equipment, safety and environmental compliance, and delivery on time.",
         [("Construction", "Your building or infrastructure developed end to end, with project management and advice along the way."),
          ("Mining", "Extraction and resource management for your operation, with safety and environmental compliance built in."),
-         ("Mining and construction equipment", "Heavy equipment and spares for your site, procured from manufacturers we have inspected."),
+         ("Mining and construction equipment", "Heavy equipment and spares for your site, built by our manufacturing partners in China."),
          ("Signage", "Signage made for your business, public body, non-profit or event, installed and maintained by us."),
          ("Digital printing", "High-quality print for whatever you need, turned around fast at a competitive price.")],
         "What we do for you", "Why clients bring us their sites and their storefronts",
@@ -1017,7 +980,7 @@ def agriculture():
         [("Crop farming", "The equipment, inputs and agronomy support that lift your yields."),
          ("Livestock farming", "Your livestock project delivered as an investment, from stock and infrastructure to husbandry training."),
          ("Seed manufacturing", "High-quality seed produced for your conditions."),
-         ("Equipment and inputs", "Farming equipment procured and supplied to you, with financing routes and operator training."),
+         ("Equipment and inputs", "Farming equipment supplied to you, with financing routes and operator training."),
          ("Community development", "Your community's livelihoods lifted through partnership, skills and market access.")],
         "What we do for you", "A programme with a quarter-century of results",
         ["Farming equipment and consulting delivered to crop farmers in Zimbabwe since 2008.",
@@ -1034,8 +997,8 @@ def brands():
           <div class="disc"><img src="%(img)s" alt="%(name)s logo" width="%(w)d" height="%(h)d" loading="lazy"></div>
           <h3>%(name)s</h3><p>%(line)s</p><a class="pill" href="quote.html?type=Brand+enquiry&amp;brand=%(name)s" data-track="brand_click" data-track-name="%(name)s">Enquire</a>
         </article>''' % b for b in BRANDS)
-    body = page_hero(I["tag"], "Our brands", "Products your customers already ask for",
-        "Stock or distribute a Websa brand and you get more than a product: a partner that handles supply, logistics and support with you.",
+    body = page_hero(I["tag"], "Our brands", "Built with the power of China. Made for you.",
+        "Every Websa brand is designed for African homes and businesses, manufactured with China's scale and technology, and backed by our own teams. Stock one and you get a partner, not just a product.",
         "assets/img/import-export.jpg", "Export and import shipping containers") + '''
 <section class="section">
   <div class="shell">
@@ -1056,7 +1019,7 @@ def brands():
 </section>
 ''' % dict(search=I["search"], radios=radios, tiles=tiles) + cta_strip("Want to stock or distribute a Websa brand?", "Retailers, wholesalers and distributors across Southern Africa already do. Tell us what you sell and where, and we take it from there.", primary=("quote.html?type=Brand+enquiry", "Ask about a brand today"))
     ld = {"@type": "ItemList", "name": "Websa Worldwide brands", "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": {"@type": "Brand", "name": b["name"], "url": SITE_URL + "/brands.html#" + b["slug"], "logo": SITE_URL + "/" + b["img"], "description": b["line"]}} for i, b in enumerate(BRANDS)]}
-    return page("brands.html", "Our brands | Websa Worldwide", "The Websa Worldwide brand portfolio: Kudus, Runningman, Blue Digital Printing, Sandie's Happy Basket, Zarus, Benny Yamin, Wakanaka, Stewart, Bigman Autospares and EnergyOn.",
+    return page("brands.html", "Our brands | Websa Worldwide", "Ten Websa Worldwide brands built with the power of China: Kudus, Runningman, Blue Digital Printing, Sandie's Happy Basket, Zarus, Benny Yamin, Wakanaka, Stewart, Bigman Autospares and EnergyOn.",
                 body, ld=ld, crumbs=[("Home", "index.html"), ("Our brands", "brands.html")], search=[(b["name"], "brands.html#" + b["slug"], b["line"]) for b in BRANDS])
 
 def projects():
@@ -1154,7 +1117,7 @@ def quote():
     countries = ["South Africa", "Zimbabwe", "Mozambique", "Angola", "Zambia", "Botswana", "Namibia", "Malawi", "Tanzania", "Kenya", "Nigeria", "Ghana", "Democratic Republic of the Congo", "Eswatini", "Lesotho", "Other"]
     c_opts = '<option value="">Choose a country</option>' + "".join('<option>%s</option>' % c for c in countries)
     body = page_hero(I["doc"], "Get your quotation", "Four short steps. One working day.",
-        "Tell us what you need, how much, where it is going and who you are. Within one working day you get shortlisted suppliers, a landed cost that includes freight, duties and clearance, and a realistic timeline.",
+        "Tell us what you need, how much, where it is going and who you are. Within one working day you get a delivered price that includes freight, duties and clearance, and a realistic timeline.",
         "assets/img/warehouse.jpg", "Warehouse aisle with stacked pallets", compact=True) + '''
 <section class="section">
   <div class="content">
@@ -1196,7 +1159,7 @@ def quote():
           <div class="field"><label for="q-company">Company (optional)</label><input id="q-company" name="company" type="text" autocomplete="organization"></div>
           <div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
           <div class="field"><label for="q-phone">Phone or WhatsApp</label><input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="+263 ..."><span class="hint">Include the country code.</span></div>
-          <div class="field"><label for="q-type">Enquiry type</label><select id="q-type" name="type"><option>Purchase request</option><option>Brand enquiry</option><option>Project enquiry</option><option>Supplier or manufacturer</option><option>Investment or partnership</option></select></div>
+          <div class="field"><label for="q-type">Enquiry type</label><select id="q-type" name="type"><option>Product or quotation request</option><option>Brand enquiry</option><option>Project enquiry</option><option>Supplier or manufacturer</option><option>Investment or partnership</option></select></div>
           <div class="field"><label for="q-heard">How did you hear about us? (optional)</label><select id="q-heard" name="heard"><option value=""></option><option>Referral</option><option>Search engine</option><option>Facebook or Instagram</option><option>YouTube</option><option>Existing client</option><option>Other</option></select></div>
           <input type="hidden" name="brand" id="q-brand">
         </div>
@@ -1213,7 +1176,7 @@ def quote():
       <div class="done" data-done hidden>
         <div class="done-ico">%(check)s</div>
         <h2>Request received<span class="dot">.</span></h2>
-        <p>Your reference is <strong data-ref></strong>. A director or project lead will reply within one working day with suppliers, a landed cost and a timeline. Keep the reference for any follow-up.</p>
+        <p>Your reference is <strong data-ref></strong>. A director or project lead will reply within one working day with a delivered price and a timeline. Keep the reference for any follow-up.</p>
         <div class="btn-row"><a class="btn btn-gold" href="%(wa)s" rel="noopener" data-wa-ref>%(wai)s Confirm on WhatsApp</a><a class="btn btn-outline" href="index.html">Back to home</a></div>
       </div>
     </form>
@@ -1221,20 +1184,20 @@ def quote():
   </div>
 </section>
 ''' % dict(cats=cat_html, countries=c_opts, check=I["check"], wa=WA, wai=I["wa"], tel=PHONE_TEL, phone=PHONE_DISPLAY, email=EMAIL)
-    return page("quote.html", "Get a quotation | Websa Worldwide", "Tell Websa Worldwide what you need in four short steps and get suppliers, a landed cost and a timeline back within one working day.",
-                body, crumbs=[("Home", "index.html"), ("Get a quotation", "quote.html")], search=[("Get a quotation", "quote.html", "Four short steps. Landed cost, suppliers and timeline within one working day.")])
+    return page("quote.html", "Get a quotation | Websa Worldwide", "Tell Websa Worldwide what you need in four short steps and get a delivered price and a timeline back within one working day.",
+                body, crumbs=[("Home", "index.html"), ("Get a quotation", "quote.html")], search=[("Get a quotation", "quote.html", "Four short steps. A delivered price and a timeline within one working day.")])
 
 def contact():
-    types = ["Purchase request", "Supplier or manufacturer", "Investment or partnership", "Brand enquiry", "Media", "Other"]
+    types = ["Product or quotation request", "Supplier or manufacturer", "Investment or partnership", "Brand enquiry", "Media", "Other"]
     opts = "".join('<option>%s</option>' % t for t in types)
     addr = "<br>".join(ADDRESS_LINES)
     body = page_hero(I["chat"], "Let's solve it together", "One working day. That is how fast you hear back.",
-        "Tell us what you want to buy, build or grow. A director or project lead answers you personally, today if you write before noon.",
+        "Tell us what you want to build or grow. A director or project lead answers you personally, today if you write before noon.",
         "assets/img/logistics-holo.jpg", "Global logistics network", compact=True) + '''
 <section class="section">
   <div class="shell">
     <div class="audiences">
-      <div class="aud reveal" id="buyers"><div class="ico">%(ship)s</div><h2>You need goods from China</h2><p>Vehicles, machinery, electronics, textiles or consumer goods, bought in China and delivered to your door, with the risk handled by us.</p><a class="btn btn-primary" href="quote.html">Get your quotation</a></div>
+      <div class="aud reveal" id="buyers"><div class="ico">%(ship)s</div><h2>You want our products</h2><p>Websa brands, vehicles, machinery and equipment built with the power of China, delivered to your door and supported by our team.</p><a class="btn btn-primary" href="quote.html">Get your quotation</a></div>
       <div class="aud reveal d1" id="suppliers"><div class="ico">%(crane)s</div><h2>You make or supply goods</h2><p>Want a reliable route into Southern African markets? Work with a partner registered at both ends of it.</p><a class="btn btn-outline" href="?type=Supplier+or+manufacturer#enquiry">Offer your products</a></div>
       <div class="aud reveal d2" id="investors"><div class="ico">%(handshake)s</div><h2>You invest or partner</h2><p>Public bodies, development programmes and investors: let us build projects together that deliver returns and leave skills behind.</p><a class="btn btn-outline" href="?type=Investment+or+partnership#enquiry">Propose a partnership</a></div>
     </div>
@@ -1286,7 +1249,7 @@ def contact():
 </section>
 ''' % dict(ship=I["ship"], crane=I["crane"], handshake=I["handshake"], opts=opts, email=EMAIL, wa=WA, wa_i=I["wa"], addr=addr, tel=PHONE_TEL, phone=PHONE_DISPLAY, map=MAP_URL, ext=I["ext"], pin=I["pin"], chat=I["chat"])
     ld = {"@type": "ContactPage", "name": "Contact Websa Worldwide", "url": SITE_URL + "/contact.html"}
-    return page("contact.html", "Contact | Websa Worldwide", "Contact Websa Worldwide at its Guangzhou head office or its Africa delivery office. Purchase requests, supplier offers, partnerships and media. Phone and WhatsApp +86 173 2401 0515.",
+    return page("contact.html", "Contact | Websa Worldwide", "Contact Websa Worldwide at its Guangzhou head office or its Africa delivery office. Product and quotation requests, partnerships and media. Phone and WhatsApp +86 173 2401 0515.",
                 body, ld=ld, crumbs=[("Home", "index.html"), ("Contact", "contact.html")], search=[("Contact", "contact.html", "Guangzhou head office, phone, WhatsApp, email, hours"), ("Media enquiries", "contact.html#media", "Journalists can reach a director by email")])
 
 def legal():
